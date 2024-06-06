@@ -1,0 +1,43 @@
+Exercises1
+//int a=3, b = 2, c = 0;
+//Console.Write("Valeur de a = ");
+//Console.WriteLine(a);
+//Console.Write("Valeur de b = ");
+//Console.WriteLine(b);
+
+//Console.WriteLine("PERMUTATION");
+//// on utilise variable c pour faire un echange entre a et b
+//c = a;
+//a = b;
+//b = c;
+//Console.Write("Valeur de a = ");
+//Console.WriteLine(a);
+//Console.Write("Valeur de b = ");
+//Console.WriteLine(b);
+
+Exercises2
+//string userEntry1 = Console.ReadLine();
+//string userEntry2 = Console.ReadLine();           
+//Console.WriteLine( userEntry1 + userEntry2);
+
+Exercises3
+////Request numbers for calculations
+//Console.Write("Type a number:");
+// string number1AsString = Console.ReadLine();
+// Console.Write("Type a second number: ");
+// string number2AsString = Console.ReadLine();
+
+// //Converting into numbers
+// int number1 = Convert.ToInt32(number1AsString);
+// int number2 = Convert.ToInt32(number2AsString);
+
+// //Request the success message          
+// Console.Write("Enter success message: ");
+// string MessageAsString = Console.ReadLine();
+
+// //Сalculate and convert to string
+// string ResultatAsString = Convert.ToString(number1 + number2);
+
+// //Output the result in the required format
+// Console.Write("[" + number1AsString + "] + " + "[" + number2AsString + "] = [" + ResultatAsString + "]\n ");
+// Console.WriteLine(MessageAsString);
