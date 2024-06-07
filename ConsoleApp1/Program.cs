@@ -96,32 +96,83 @@ namespace ConsoleApp1
 
 
 
-            // LES BOUCLES---------------------------------->>
-            // AddValues() -- i'is a function for every iteration 
-            // First iteration
-            AddValues();
+            //// LES BOUCLES---------------------------------->>
+            //// AddValues() -- i'is a function for every iteration 
+            //// First iteration
+            //AddValues();
 
-            //Asking numbers of iterations and running
-            int nomberOfiterations  = 0;
-            Console.Write("Rentrez le nombre d'itérations: ");
-            string nomberOfiterationsString = Console.ReadLine();
+            ////Asking numbers of iterations and running
+            //int nomberOfiterations  = 0;
+            //Console.Write("Rentrez le nombre d'itérations: ");
+            //string nomberOfiterationsString = Console.ReadLine();
 
-            if (int.TryParse(nomberOfiterationsString, out int number))
+            //if (int.TryParse(nomberOfiterationsString, out int number))
+            //{
+            //    nomberOfiterations = Convert.ToInt32(nomberOfiterationsString);
+            //};
+
+            //for (int i=0; i< nomberOfiterations; i++)
+            //{
+            //    AddValues();
+            //}
+            ////<<---------------------------------------------LES BOUCLES
+
+
+
+            //LES FONCTIONS--------------------------------------------->>
+            bool itsNotFin = true;
+            while (itsNotFin)
             {
-                nomberOfiterations = Convert.ToInt32(nomberOfiterationsString);
-            };
+                Double NumberFromUser1 = AskingEnterTheNumber(1);
+                Double NumberFromUser2 = AskingEnterTheNumber(2);
 
-            for (int i=0; i< nomberOfiterations; i++)
-            {
-                AddValues();
+               
+                Console.Write("which operation you choose: ");
+                string chosedOperationByUser = Console.ReadLine();
+                if (chosedOperationByUser == null )
+                {
+                    Console.WriteLine("The values possible add; multiply; dividee; substract");
+                }
+                else
+                {
+                    if (chosedOperationByUser.ToLower() == "add")
+                    {
+                        double ReueltatOfCalcules = FunctionMatADD(NumberFromUser1, NumberFromUser2);
+                        string stringToPrint = PreparatingTheTextToPrint("+", NumberFromUser1, NumberFromUser2);
+                        Console.Write(stringToPrint);
+                        Console.WriteLine(ReueltatOfCalcules);
+                    }
+                    if (chosedOperationByUser.ToLower() == "multiply")
+                    {
+                        double ReueltatOfCalcules = FunctionMatMULITPLY(NumberFromUser1, NumberFromUser2);
+                        string stringToPrint = PreparatingTheTextToPrint("*", NumberFromUser1, NumberFromUser2);
+                        Console.Write(stringToPrint);
+                        Console.WriteLine(ReueltatOfCalcules);
+                    }
+                    if (chosedOperationByUser.ToLower() == "dividee")
+                    {
+                        double ReueltatOfCalcules = FunctionMatDIVIDEE(NumberFromUser1, NumberFromUser2);
+                        string stringToPrint = PreparatingTheTextToPrint("/", NumberFromUser1, NumberFromUser2);
+                        Console.Write(stringToPrint);
+                        Console.WriteLine(ReueltatOfCalcules);
+                    }
+                    if (chosedOperationByUser.ToLower() == "substract")
+                    {
+                        double ReueltatOfCalcules = FunctionMatSUBSTRACT(NumberFromUser1, NumberFromUser2);
+                        string stringToPrint = PreparatingTheTextToPrint("/", NumberFromUser1, NumberFromUser2);
+                        Console.Write(stringToPrint);
+                        Console.WriteLine(ReueltatOfCalcules);
+                    }
+                }
+
             }
-            //<<---------------------------------------------LES BOUCLES
 
 
-
-
+            //<<---------------------------------------------LES FONCTIONS
         }
+        ///////////////////////////////////////////////////////////////////////////////////////////
 
+        //Function for exercise "LES BOUCLES"
         static void AddValues()
         {
             //Declaration of variables
@@ -167,5 +218,67 @@ namespace ConsoleApp1
             
             
         }
+
+        //Functions for exercise "LES FONCTIONS"
+        static string PreparatingTheTextToPrint (string currantOperationChosed, double number1, double number2)
+        {
+           string stringNumber1 = Convert.ToString(number1);
+           string stringNumber2 = Convert.ToString(number2);
+           return stringNumber1 + currantOperationChosed +" "+ stringNumber2+ " = ";
+            
+        }
+
+        static double AskingEnterTheNumber (int numberOfArgument)
+        {
+            double doubleStringFromUser1 = 0;
+            string StringOfArgument = "first ";
+
+            if (numberOfArgument !=1)
+            {
+                StringOfArgument = "second ";
+            }
+            Console.Write(StringOfArgument + " operand: ");
+            string StringFromUser1 = Console.ReadLine();
+            if (double.TryParse(StringFromUser1, out double number))
+            {
+                doubleStringFromUser1 = Convert.ToDouble(StringFromUser1);
+            }
+            else
+            {
+                Console.Write("It's not a number. I will take 0! \n");
+               
+            }
+            return doubleStringFromUser1;
+        }
+
+
+        static double FunctionMatADD(double Valu1, double value2)
+        {
+           return Valu1 + value2;
+        }
+
+        static double FunctionMatMULITPLY (double Valu1, double value2)
+        {
+            return Valu1 * value2;
+        }
+
+        static double FunctionMatDIVIDEE(double Valu1, double value2)
+        {
+           if (value2 != 0 )
+            {
+                return Valu1 / value2;
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+        static double FunctionMatSUBSTRACT(double Valu1, double value2)
+        {
+            return Valu1 - value2;
+        }
     }
+    
+
 }
