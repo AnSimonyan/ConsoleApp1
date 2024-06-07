@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics.Metrics;
+using System.Reflection.Metadata.Ecma335;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ConsoleApp1
 {
@@ -62,29 +64,95 @@ namespace ConsoleApp1
             //Console.Write(messageresultat);
             //Console.Write("\n Resulting integer: " + resultingInteger);
 
-            //Un tableau
-            //Array declaration
-            int[] intArray1 = new int[3] { 1,2,3};
-            int[] intArray2 = new int[3] { 4,5,6};
+            ////Un tableau
+            ////Array declaration
+            //int[] intArray1 = new int[3] { 1,2,3};
+            //int[] intArray2 = new int[3] { 4,5,6};
 
-            //Сalculating the length of the 3rd array
-            int LengthArray1 = intArray1.Length ;
-            int LengthArray2 = intArray2.Length ;
-            int LengthArray3 = LengthArray1 + LengthArray2;
-            int[] intArray3 = new int[LengthArray3];
+            ////Сalculating the length of the 3rd array
+            //int LengthArray1 = intArray1.Length ;
+            //int LengthArray2 = intArray2.Length ;
+            //int LengthArray3 = LengthArray1 + LengthArray2;
+            //int[] intArray3 = new int[LengthArray3];
 
-            //Filling the 3rd array
-            for (int i = 0; i < LengthArray1; i++)
+            ////Filling the 3rd array
+            //for (int i = 0; i < LengthArray1; i++)
+            //{
+            //    intArray3[i] = intArray1[i];
+            //    Console.Write(intArray3[i]);
+            //}
+
+            //for (int i = LengthArray1; i < LengthArray3; i++)
+            //{
+            //    intArray3[i] = intArray2[i- LengthArray1];
+            //    Console.Write(intArray3[i]);
+            //}
+
+            // Les boucles
+            // AddValues() -- i'is a function for every iteration 
+            // First iteration
+            AddValues();
+
+            //Asking numbers of iterations and running
+            int nomberOfiterations  = 0;
+            Console.Write("Rentrez le nombre d'itérations: ");
+            string nomberOfiterationsString = Console.ReadLine();
+
+            if (int.TryParse(nomberOfiterationsString, out int number))
             {
-                intArray3[i] = intArray1[i];
-                Console.Write(intArray3[i]);
+                nomberOfiterations = Convert.ToInt32(nomberOfiterationsString);
+            };
+
+            for (int i=0; i< nomberOfiterations; i++)
+            {
+                AddValues();
             }
+        }
+
+        static void AddValues()
+        {
+            //Declaration of variables
+            string[] moves = new string [32];
+            string stepEteredByUser = "", stepEteredByUserUpper = "";
+            bool itsNotFin = true;
+            int lenghtOfArray = moves.Length;
+            int currentStep = 0;
+
+            while (itsNotFin)
+            {
+                
+                if (stepEteredByUserUpper == "DONE" || currentStep > lenghtOfArray-1)
+                {
+                    
+                    itsNotFin = false;
+                }
+                else
+                {
+                    Console.Write("Rentrez un pas de danse: ");
+                    stepEteredByUser = Console.ReadLine();
+                    stepEteredByUserUpper = stepEteredByUser.ToUpper();
+                    moves[currentStep] = stepEteredByUser;
+
+                }
+                currentStep = currentStep + 1;
+
+            }
+            int i= 0;
+            itsNotFin = true;
+            while (itsNotFin)
+            {
+                 Console.Write(moves[i] + "\n");
+                 
+                 if (moves[i] == null ||  moves[i].ToUpper() == "DONE" || i == lenghtOfArray -1)
+                    
+                 {
+                     itsNotFin = false;
+                 }
+                i = i + 1;
+            }
+                
             
-            for (int i = LengthArray1; i < LengthArray3; i++)
-            {
-                intArray3[i] = intArray2[i- LengthArray1];
-                Console.Write(intArray3[i]);
-            }
+            
         }
     }
 }
