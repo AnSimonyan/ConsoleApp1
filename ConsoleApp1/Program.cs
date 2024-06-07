@@ -121,6 +121,7 @@ namespace ConsoleApp1
 
             //LES FONCTIONS--------------------------------------------->>
             bool itsNotFin = true;
+            bool thereIsResultat = false;
             while (itsNotFin)
             {
                 Double NumberFromUser1 = AskingEnterTheNumber(1);
@@ -131,7 +132,7 @@ namespace ConsoleApp1
                 string chosedOperationByUser = Console.ReadLine();
                 if (chosedOperationByUser == null )
                 {
-                    Console.WriteLine("The values possible add; multiply; dividee; substract");
+                    Console.WriteLine("Values possible add; multiply; divide; substract; modulo. Try again!");
                 }
                 else
                 {
@@ -141,6 +142,7 @@ namespace ConsoleApp1
                         string stringToPrint = PreparatingTheTextToPrint("+", NumberFromUser1, NumberFromUser2);
                         Console.Write(stringToPrint);
                         Console.WriteLine(ReueltatOfCalcules);
+                        thereIsResultat = true;
                     }
                     if (chosedOperationByUser.ToLower() == "multiply")
                     {
@@ -148,22 +150,39 @@ namespace ConsoleApp1
                         string stringToPrint = PreparatingTheTextToPrint("*", NumberFromUser1, NumberFromUser2);
                         Console.Write(stringToPrint);
                         Console.WriteLine(ReueltatOfCalcules);
+                        thereIsResultat = true;
                     }
-                    if (chosedOperationByUser.ToLower() == "dividee")
+                    if (chosedOperationByUser.ToLower() == "divide")
                     {
                         double ReueltatOfCalcules = FunctionMatDIVIDEE(NumberFromUser1, NumberFromUser2);
                         string stringToPrint = PreparatingTheTextToPrint("/", NumberFromUser1, NumberFromUser2);
                         Console.Write(stringToPrint);
                         Console.WriteLine(ReueltatOfCalcules);
+                        thereIsResultat = true;
                     }
                     if (chosedOperationByUser.ToLower() == "substract")
                     {
                         double ReueltatOfCalcules = FunctionMatSUBSTRACT(NumberFromUser1, NumberFromUser2);
-                        string stringToPrint = PreparatingTheTextToPrint("/", NumberFromUser1, NumberFromUser2);
+                        string stringToPrint = PreparatingTheTextToPrint("-", NumberFromUser1, NumberFromUser2);
                         Console.Write(stringToPrint);
                         Console.WriteLine(ReueltatOfCalcules);
+                        thereIsResultat = true;
+                    }
+                    if (chosedOperationByUser.ToLower() == "modulo")
+                    {
+                        double ReueltatOfCalcules = FunctionMatMODULO(NumberFromUser1, NumberFromUser2);
+                        string stringToPrint = PreparatingTheTextToPrint("%", NumberFromUser1, NumberFromUser2);
+                        Console.Write(stringToPrint);
+                        Console.WriteLine(ReueltatOfCalcules);
+                        thereIsResultat = true;
+                    }
+                    if (thereIsResultat == false)
+                    {
+                        Console.WriteLine("Values possible add; multiply; divide; substract; modulo. Try again!");
                     }
                 }
+                
+
 
             }
 
@@ -224,7 +243,7 @@ namespace ConsoleApp1
         {
            string stringNumber1 = Convert.ToString(number1);
            string stringNumber2 = Convert.ToString(number2);
-           return stringNumber1 + currantOperationChosed +" "+ stringNumber2+ " = ";
+           return stringNumber1 + " "+currantOperationChosed +" "+ stringNumber2+ " = ";
             
         }
 
@@ -274,9 +293,15 @@ namespace ConsoleApp1
             }
 
         }
+
         static double FunctionMatSUBSTRACT(double Valu1, double value2)
         {
             return Valu1 - value2;
+        }
+
+        static double FunctionMatMODULO(double Valu1, double value2)
+        {
+            return Valu1 % value2 ;
         }
     }
     
