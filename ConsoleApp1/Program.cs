@@ -9,7 +9,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //Les conditions
+            //LES CONDITIONS------------------------------>>
             ////Request numbers for calculations
             //Console.Write("Limit1: ");
             //string number1AsString = Console.ReadLine();
@@ -63,6 +63,10 @@ namespace ConsoleApp1
 
             //Console.Write(messageresultat);
             //Console.Write("\n Resulting integer: " + resultingInteger);
+            ////<<-----------------------------LES CONDITIONS
+
+
+
 
             ////UN TABLEAU-------------------------------->>
             ////Array declaration
@@ -89,7 +93,10 @@ namespace ConsoleApp1
             //}
             //<<---------------------------------------UN TABLEAU
 
-            // Les boucles---------------------------------->>
+
+
+
+            // LES BOUCLES---------------------------------->>
             // AddValues() -- i'is a function for every iteration 
             // First iteration
             AddValues();
@@ -108,7 +115,11 @@ namespace ConsoleApp1
             {
                 AddValues();
             }
-            //<<---------------------------------------------Les boucles
+            //<<---------------------------------------------LES BOUCLES
+
+
+
+
         }
 
         static void AddValues()
