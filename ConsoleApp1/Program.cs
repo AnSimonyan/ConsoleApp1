@@ -130,60 +130,55 @@ namespace ConsoleApp1
                
                 Console.Write("which operation you choose: ");
                 string chosedOperationByUser = Console.ReadLine();
-                if (chosedOperationByUser == null )
+
+                if (chosedOperationByUser == null)
+                {
+                    thereIsResultat = true;
+                }
+                    if (chosedOperationByUser.ToLower() == "add")
+                {
+                    double ReueltatOfCalcules = FunctionMatADD(NumberFromUser1, NumberFromUser2);
+                    string stringToPrint = PreparatingTheTextToPrint("+", NumberFromUser1, NumberFromUser2);
+                    Console.Write(stringToPrint);
+                    Console.WriteLine(ReueltatOfCalcules);
+                    thereIsResultat = true;
+                }
+                if (chosedOperationByUser.ToLower() == "multiply")
+                {
+                    double ReueltatOfCalcules = FunctionMatMULITPLY(NumberFromUser1, NumberFromUser2);
+                    string stringToPrint = PreparatingTheTextToPrint("*", NumberFromUser1, NumberFromUser2);
+                    Console.Write(stringToPrint);
+                    Console.WriteLine(ReueltatOfCalcules);
+                    thereIsResultat = true;
+                }
+                if (chosedOperationByUser.ToLower() == "divide")
+                {
+                    double ReueltatOfCalcules = FunctionMatDIVIDEE(NumberFromUser1, NumberFromUser2);
+                    string stringToPrint = PreparatingTheTextToPrint("/", NumberFromUser1, NumberFromUser2);
+                    Console.Write(stringToPrint);
+                    Console.WriteLine(ReueltatOfCalcules);
+                    thereIsResultat = true;
+                }
+                if (chosedOperationByUser.ToLower() == "substract")
+                {
+                    double ReueltatOfCalcules = FunctionMatSUBSTRACT(NumberFromUser1, NumberFromUser2);
+                    string stringToPrint = PreparatingTheTextToPrint("-", NumberFromUser1, NumberFromUser2);
+                    Console.Write(stringToPrint);
+                    Console.WriteLine(ReueltatOfCalcules);
+                    thereIsResultat = true;
+                }
+                if (chosedOperationByUser.ToLower() == "modulo")
+                {
+                    double ReueltatOfCalcules = FunctionMatMODULO(NumberFromUser1, NumberFromUser2);
+                    string stringToPrint = PreparatingTheTextToPrint("%", NumberFromUser1, NumberFromUser2);
+                    Console.Write(stringToPrint);
+                    Console.WriteLine(ReueltatOfCalcules);
+                    thereIsResultat = true;
+                }
+                if (thereIsResultat == false)
                 {
                     Console.WriteLine("Values possible add; multiply; divide; substract; modulo. Try again!");
                 }
-                else
-                {
-                    if (chosedOperationByUser.ToLower() == "add")
-                    {
-                        double ReueltatOfCalcules = FunctionMatADD(NumberFromUser1, NumberFromUser2);
-                        string stringToPrint = PreparatingTheTextToPrint("+", NumberFromUser1, NumberFromUser2);
-                        Console.Write(stringToPrint);
-                        Console.WriteLine(ReueltatOfCalcules);
-                        thereIsResultat = true;
-                    }
-                    if (chosedOperationByUser.ToLower() == "multiply")
-                    {
-                        double ReueltatOfCalcules = FunctionMatMULITPLY(NumberFromUser1, NumberFromUser2);
-                        string stringToPrint = PreparatingTheTextToPrint("*", NumberFromUser1, NumberFromUser2);
-                        Console.Write(stringToPrint);
-                        Console.WriteLine(ReueltatOfCalcules);
-                        thereIsResultat = true;
-                    }
-                    if (chosedOperationByUser.ToLower() == "divide")
-                    {
-                        double ReueltatOfCalcules = FunctionMatDIVIDEE(NumberFromUser1, NumberFromUser2);
-                        string stringToPrint = PreparatingTheTextToPrint("/", NumberFromUser1, NumberFromUser2);
-                        Console.Write(stringToPrint);
-                        Console.WriteLine(ReueltatOfCalcules);
-                        thereIsResultat = true;
-                    }
-                    if (chosedOperationByUser.ToLower() == "substract")
-                    {
-                        double ReueltatOfCalcules = FunctionMatSUBSTRACT(NumberFromUser1, NumberFromUser2);
-                        string stringToPrint = PreparatingTheTextToPrint("-", NumberFromUser1, NumberFromUser2);
-                        Console.Write(stringToPrint);
-                        Console.WriteLine(ReueltatOfCalcules);
-                        thereIsResultat = true;
-                    }
-                    if (chosedOperationByUser.ToLower() == "modulo")
-                    {
-                        double ReueltatOfCalcules = FunctionMatMODULO(NumberFromUser1, NumberFromUser2);
-                        string stringToPrint = PreparatingTheTextToPrint("%", NumberFromUser1, NumberFromUser2);
-                        Console.Write(stringToPrint);
-                        Console.WriteLine(ReueltatOfCalcules);
-                        thereIsResultat = true;
-                    }
-                    if (thereIsResultat == false)
-                    {
-                        Console.WriteLine("Values possible add; multiply; divide; substract; modulo. Try again!");
-                    }
-                }
-                
-
-
             }
 
 
