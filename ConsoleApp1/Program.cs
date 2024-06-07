@@ -64,7 +64,7 @@ namespace ConsoleApp1
             //Console.Write(messageresultat);
             //Console.Write("\n Resulting integer: " + resultingInteger);
 
-            ////Un tableau
+            ////UN TABLEAU-------------------------------->>
             ////Array declaration
             //int[] intArray1 = new int[3] { 1,2,3};
             //int[] intArray2 = new int[3] { 4,5,6};
@@ -87,8 +87,9 @@ namespace ConsoleApp1
             //    intArray3[i] = intArray2[i- LengthArray1];
             //    Console.Write(intArray3[i]);
             //}
+            //<<---------------------------------------UN TABLEAU
 
-            // Les boucles
+            // Les boucles---------------------------------->>
             // AddValues() -- i'is a function for every iteration 
             // First iteration
             AddValues();
@@ -107,6 +108,7 @@ namespace ConsoleApp1
             {
                 AddValues();
             }
+            //<<---------------------------------------------Les boucles
         }
 
         static void AddValues()
